@@ -15,6 +15,7 @@ public class MyFirstTest {
     @Before
     public void start() {
         this.driver = new ChromeDriver();
+        this.driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
     }
 
