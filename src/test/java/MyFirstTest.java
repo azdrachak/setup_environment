@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
@@ -13,18 +12,15 @@ public class MyFirstTest {
     private WebDriver driver;
     private WebDriverWait wait;
 
-/*    @Before
+    @Before
     public void start() {
-//        this.driver = new ChromeDriver();
-        this.driver = new InternetExplorerDriver();
+        this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
-    }*/
+    }
 
     @Test
     public void myFirstTest() {
-        driver = new InternetExplorerDriver();
-
         driver.get("https://www.google.com/ncr");
         driver.findElement(By.name("q")).sendKeys("webdriver");
         driver.findElement(By.name("btnG")).click();
@@ -33,10 +29,10 @@ public class MyFirstTest {
         driver.quit();
     }
 
-/*    @After
+    @After
     public void stop() {
         driver.quit();
         driver = null;
-    }*/
+    }
 
 }

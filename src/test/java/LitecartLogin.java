@@ -27,7 +27,6 @@ public class LitecartLogin {
 
     @Test
     public void loginTest() {
-//        driver.get("http://localhost:8080/litecart/admin/");
         driver.navigate().to("http://localhost:8080/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
