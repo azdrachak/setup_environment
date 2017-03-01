@@ -20,23 +20,24 @@ public class LitecartAdminSideMenu {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-        driver.navigate().to(adminUrl);
-
-        // Login to the admin panel
-        driver.findElement(By.cssSelector("[name=username]")).sendKeys("admin");
-        driver.findElement(By.cssSelector("[name=password]")).sendKeys("admin");
-        driver.findElement(By.cssSelector("[name=login]")).click();
     }
 
     @Test
     public void sideMenuTest() {
+        // Login to the admin panel
+        driver.navigate().to(adminUrl);
+        driver.findElement(By.cssSelector("[name=username]")).sendKeys("admin");
+        driver.findElement(By.cssSelector("[name=password]")).sendKeys("admin");
+        driver.findElement(By.cssSelector("[name=login]")).click();
+
+        // Click menus
         int menuCount = driver.findElements(AdminPage.sideMenus).size();
         for (int i = 0; i < menuCount; i++) {
             List<WebElement> menus = driver.findElements(AdminPage.sideMenus);
             menus.get(i).click();
             Assert.assertTrue(driver.findElements(By.tagName("h1")).size() > 0);
 
+            // click submenus of the menu
             int subMenuCount = driver.findElements(AdminPage.subMenus).size();
             for (int j = 0; j < subMenuCount; j++) {
                 List<WebElement> subMenus = driver.findElements(AdminPage.subMenus);
@@ -44,7 +45,6 @@ public class LitecartAdminSideMenu {
                 Assert.assertTrue(driver.findElements(By.tagName("h1")).size() > 0);
             }
         }
-
     }
 
     @After
