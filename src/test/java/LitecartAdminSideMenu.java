@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.AdminPage;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -47,6 +46,7 @@ public class LitecartAdminSideMenu {
         }
 
     }
+
     @After
     public void stop() {
         driver.quit();
