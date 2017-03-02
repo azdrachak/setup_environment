@@ -26,7 +26,7 @@ public class MainPageStickerCheck {
         driver.navigate().to(mainPage);
         List<WebElement> ducks = driver.findElements(By.cssSelector(".image-wrapper"));
         for (WebElement duck : ducks) {
-            Assert.assertTrue(duck.findElements(By.cssSelector("div[class^=sticker]")).size() > 0);
+            Assert.assertTrue(duck.findElements(By.cssSelector("div[class^=sticker]")).size() == 1);
         }
     }
 
