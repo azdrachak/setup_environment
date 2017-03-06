@@ -34,7 +34,6 @@ public class ItemPage {
         HashMap<String, String> styles = new HashMap<>();
         styles.put("color", driver.findElement(itemCampaignPrice).getCssValue("color"));
         styles.put("font-size", driver.findElement(itemCampaignPrice).getCssValue("font-size"));
-//        styles.put("font-weight", driver.findElement(itemCampaignPrice).getCssValue("font-weight"));
         styles.put("font-weight", driver.findElement(itemCampaignPrice).getTagName());
         styles.put("text-decoration", driver.findElement(itemCampaignPrice).getCssValue("text-decoration"));
         return styles;

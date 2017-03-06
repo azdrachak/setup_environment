@@ -39,7 +39,6 @@ public class MainPage {
         HashMap<String, String> styles = new HashMap<>();
         styles.put("color", item.findElement(itemCampaignPrice).getCssValue("color"));
         styles.put("font-size", item.findElement(itemCampaignPrice).getCssValue("font-size"));
-//        styles.put("font-weight", item.findElement(itemCampaignPrice).getCssValue("font-weight"));
         styles.put("font-weight", item.findElement(itemCampaignPrice).getTagName());
         styles.put("text-decoration", item.findElement(itemCampaignPrice).getCssValue("text-decoration"));
         return styles;
