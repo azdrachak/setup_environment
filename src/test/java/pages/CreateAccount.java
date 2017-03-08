@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateAccount {
@@ -43,14 +42,14 @@ public class CreateAccount {
     }
 
     public static void selectCountry(WebDriver driver, String country) {
-        Wait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(selectCountry));
         Select select = new Select(driver.findElement(selectCountry));
         select.selectByVisibleText(country);
     }
 
     public static void selectZone(WebDriver driver, String zone) {
-        Wait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(selectZoneCode));
         Select select = new Select(driver.findElement(selectZoneCode));
         select.selectByVisibleText(zone);

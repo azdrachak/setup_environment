@@ -3,14 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Wait;
 
 import java.util.HashMap;
 import java.util.List;
 
 public class MainPage {
-    private static Wait wait;
-
     private static By campaignsItem = By.cssSelector("#box-campaigns li");
     private static By itemRegularPrice = By.cssSelector("s.regular-price");
     private static By itemCampaignPrice = By.cssSelector("strong.campaign-price");
@@ -43,6 +40,7 @@ public class MainPage {
     public static String getItemCampaignPrice(WebElement item) {
         return item.findElement(itemCampaignPrice).getAttribute("textContent");
     }
+
     public static HashMap<String, String> getItemCampaignPriceCSS(WebElement item) {
         HashMap<String, String> styles = new HashMap<>();
         styles.put("color", item.findElement(itemCampaignPrice).getCssValue("color"));
