@@ -8,6 +8,7 @@ public class AdminPage {
     public static By subMenus = By.cssSelector("#app- li");
     private static By countriesSubMenu = By.xpath("//*[@class='name' and contains(text(), 'Countries')]");
     private static By geoZonesSubMenu = By.xpath("//*[@class='name' and contains(text(), 'Geo Zones')]");
+    private static By catalogSubMenu = By.xpath("//*[@class='name' and contains(text(), 'Catalog')]");
 
     public static void navigateToCountries(WebDriver driver) {
         driver.findElement(countriesSubMenu).click();
@@ -17,4 +18,7 @@ public class AdminPage {
         driver.findElement(geoZonesSubMenu).click();
     }
 
+    public static void navigateToCatalog(WebDriver driver) {
+        driver.findElement(catalogSubMenu).click();
+    }
 }
