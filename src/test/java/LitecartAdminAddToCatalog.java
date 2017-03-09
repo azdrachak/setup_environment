@@ -35,7 +35,7 @@ public class LitecartAdminAddToCatalog {
     public void addToCatalogTest() {
         String timestamp = new SimpleDateFormat("HH-mm-ss").format(new Date());
         String productName = "Duck-" + timestamp;
-        String imagePath = "\\src\\test\\resources\\1-yellow-duck-n1.png";
+        String imagePath = "/src/test/resources/1-yellow-duck-n1.png";
 
         AdminPageCatalog.openAddNewProductPage(wd);
         AdminPageAddNewProduct.clickTabGeneral(wd);
