@@ -16,6 +16,8 @@ public class MainPage {
     private static By inputEmail = By.name("email");
     private static By inputPassword = By.name("password");
     private static By buttonLogin = By.name("login");
+    private static By product = By.className("product");
+    private static By linkCheckout = By.cssSelector("#cart a.link");
 
     public static List<WebElement> getCampaignItems(WebDriver driver) {
         return driver.findElements(campaignsItem);
@@ -62,5 +64,13 @@ public class MainPage {
 
     public static void logout(WebDriver driver) {
         driver.findElement(logoutLink).click();
+    }
+
+    public static List<WebElement> getProductsList(WebDriver driver) {
+        return driver.findElements(product);
+    }
+
+    public static void clickCheckout(WebDriver driver) {
+        driver.findElement(linkCheckout).click();
     }
 }
