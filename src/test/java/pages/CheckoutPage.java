@@ -9,6 +9,7 @@ import java.util.List;
 public class CheckoutPage {
     private static By orderSummaryTableHeaderQuantity = By.cssSelector("#order_confirmation-wrapper .quantity");
     private static By itemsContainerBox = By.id("box-checkout-cart");
+    private static By itemsMiniature = By.cssSelector("#box-checkout-cart .shortcuts li");
     private static By buttonRemove = By.name("remove_cart_item");
 
     public static WebElement getOrderSummaryFirstCell(WebDriver driver) {
@@ -16,7 +17,8 @@ public class CheckoutPage {
     }
 
     public static void stopItemsCarusel(WebDriver driver) {
-        driver.findElement(itemsContainerBox).click();
+//        driver.findElement(itemsContainerBox).click();
+        driver.findElement(itemsMiniature).click();
     }
 
     public static List<WebElement> getRemoveButtons(WebDriver driver) {
